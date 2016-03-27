@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+body {
+  padding: 15px 0;
+}
+
+.form-wrapper {
+  margin-top: 50px;
+}
+
+h1 {
+  padding: 2px 0 0 42px;
+  background: url("/slack.png") no-repeat left top;
+}
+
+.help-block > span {
+  display: none;
+}
+
+.help-block .default {
+  display: block;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.right .github-fork-ribbon {
+  background-color: #333;
+}
