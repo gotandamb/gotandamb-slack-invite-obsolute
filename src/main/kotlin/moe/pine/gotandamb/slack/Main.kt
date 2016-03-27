@@ -9,8 +9,13 @@ import spark.Spark.post
 import spark.template.mustache.MustacheTemplateEngine
 
 fun main(args: Array<String>) {
-    Spark.ipAddress(System.getenv("OPENSHIFT_JBOSSEWS_IP") ?: "0.0.0.0")
-    Spark.port(Integer.parseInt(System.getenv("OPENSHIFT_JBOSSEWS_HTTP_PORT") ?: "5353"))
+    val ipAddr = System.getenv("OPENSHIFT_DIY_IP") ?: "0.0.0.0"
+    val port = Integer.parseInt(System.getenv("OPENSHIFT_DIY_PORT") ?: "5353")
+
+    println("Listening $ipAddr:$port")
+
+    Spark.ipAddress(ipAddr)
+    Spark.port(port)
     Spark.staticFileLocation("/public")
 
     get("/", { request: Request, response: Response ->
