@@ -7,4 +7,5 @@ export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
 export PATH=$JAVA_HOME/bin:$PATH
 
 cd $OPENSHIFT_REPO_DIR
-./gradlew run
+./gradlew clean assemble --info
+nohup ./gradlew run >> $OPENSHIFT_LOG_DIR/app.log $2>&1 &

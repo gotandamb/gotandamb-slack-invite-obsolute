@@ -9,8 +9,8 @@ import spark.Spark.post
 import spark.template.mustache.MustacheTemplateEngine
 
 fun main(args: Array<String>) {
-    val ipAddr = System.getenv("OPENSHIFT_DIY_IP") ?: "0.0.0.0"
-    val port = Integer.parseInt(System.getenv("OPENSHIFT_DIY_PORT") ?: "5353")
+    val ipAddr: String = System.getenv("OPENSHIFT_DIY_IP") ?: "0.0.0.0"
+    val port: Int = Integer.parseInt(System.getenv("OPENSHIFT_DIY_PORT") ?: "5353")
 
     println("Listening $ipAddr:$port")
 
